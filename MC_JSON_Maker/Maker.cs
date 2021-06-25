@@ -5,68 +5,64 @@ using System.IO;
 
 namespace MC_JSON_Maker
 {
-    class fileContents
+    class FileContents
     {
         public string parent { get; set; }
         public Dictionary<String, String> textures { get; set; }
     }
+
+    class Counter
+    {
+        public int count { get; set; }
+    }
+
     class Maker
     {
         static void Main(string[] args)
         {
-            string filePath = "./MC_JSON_Maker_RunCounter.txt";
-            int count = 0;
-            if(File.Exists(filePath))
+            //initialize needed vars
+            //string filePath = "./MC_JSON_Maker_RunCounter.json";
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "MC_JSON_Maker_RunCounter.json");
+            Counter index = new Counter();
+            index.count = 1;
+            string json = "";
+
+            //check if file exists to use the updated count, otherwise use 1(line 26)
+            if (File.Exists(filePath))
             {
                 try
                 {
                     StreamReader sr = new StreamReader(filePath);
-                    var line = sr.ReadLine();
-                    sr.Close();
-                    if(!int.TryParse(line, out count))
-                    {
-                        Console.WriteLine("Could not parse int\n");
-                    }
+                    json = sr.ReadToEnd();
                 }
-                catch(Exception fileReadError)
+                catch(Exception fileReadException)
                 {
-                    Console.WriteLine("Failed to read file:\n" + fileReadError);
+                    Console.WriteLine("Failed to read json file:\n" + fileReadException);
                 }
-            }
-            else
-            {
-                try
-                {
-                    File.CreateText(filePath);
-                }
-                catch(Exception fileCreationError)
-                {
-                    Console.WriteLine("Filed to create counter file:\n" + fileCreationError);
-                }
+
+                index = JsonConvert.DeserializeObject<Counter>(json);
             }
 
-            try
-            {
-                StreamWriter wr = new StreamWriter(filePath, false);
-                wr.WriteLine(count + 1);
-            }
-            catch(Exception fileWriteError)
-            {
-
-            }
-
-            var fileContents = new fileContents
+            //generate the template
+            var fileContents = new FileContents
             {
                 parent = "item/generated",
                 textures = new Dictionary<String, String> 
                     {
-                        ["layer0"] = "items/CI" + count
+                        ["layer0"] = "items/CI" + index.count
                     }
             };
-
-            string fileName = "CLI" + count + ".json";
+            
+            //create the new json file
+            string fileName = Path.Combine(Directory.GetCurrentDirectory(),"CLI" + index.count + ".json");
             string jsonString = JsonConvert.SerializeObject(fileContents);
             File.WriteAllText(fileName, jsonString);
+
+            //increment counter and write to file
+            index.count += 1;
+            string jstring = JsonConvert.SerializeObject(index);
+            File.WriteAllText(filePath, jstring);
+            Console.WriteLine("Json file created at: " + fileName);
         }
     }
 }
