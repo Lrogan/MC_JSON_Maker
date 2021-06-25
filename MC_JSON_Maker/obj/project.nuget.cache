@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "UFGXg5RPofNoeYjj1GSatM03lLuhY+y0why5g/v1wgREQuARc9HIG9GBuLYHu8+cj39321teJIy5T7OIH1fgqQ==",
+  "success": true,
+  "projectFilePath": "E:\\gitrepos\\MC_JSON_Maker\\MC_JSON_Maker\\MC_JSON_Maker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\antho\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
