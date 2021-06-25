@@ -29,7 +29,7 @@ namespace MC_JSON_Maker
             bool isInt = false;
             int input = 0;
 
-            while(isInt)
+            while(!isInt)
             {
                 Console.WriteLine("How many files would you like to make?(please enter only whole numbers)");
                 isInt = int.TryParse(Console.ReadLine(), out input);
@@ -48,6 +48,7 @@ namespace MC_JSON_Maker
                     {
                         StreamReader sr = new StreamReader(filePath);
                         json = sr.ReadToEnd();
+                        sr.Close();
                     }
                     catch (Exception fileReadException)
                     {
