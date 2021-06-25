@@ -26,43 +26,58 @@ namespace MC_JSON_Maker
             Counter index = new Counter();
             index.count = 1;
             string json = "";
+            bool isInt = false;
+            int input = 0;
 
-            //check if file exists to use the updated count, otherwise use 1(line 26)
-            if (File.Exists(filePath))
+            while(isInt)
             {
-                try
+                Console.WriteLine("How many files would you like to make?(please enter only whole numbers)");
+                isInt = int.TryParse(Console.ReadLine(), out input);
+                if(!isInt)
                 {
-                    StreamReader sr = new StreamReader(filePath);
-                    json = sr.ReadToEnd();
+                    Console.WriteLine("That's not a whole number, please try again.");
                 }
-                catch(Exception fileReadException)
-                {
-                    Console.WriteLine("Failed to read json file:\n" + fileReadException);
-                }
-
-                index = JsonConvert.DeserializeObject<Counter>(json);
             }
 
-            //generate the template
-            var fileContents = new FileContents
+            for (int i = 0; i < input; i++)
             {
-                parent = "item/generated",
-                textures = new Dictionary<String, String> 
+                //check if file exists to use the updated count, otherwise use 1(line 26)
+                if (File.Exists(filePath))
+                {
+                    try
+                    {
+                        StreamReader sr = new StreamReader(filePath);
+                        json = sr.ReadToEnd();
+                    }
+                    catch (Exception fileReadException)
+                    {
+                        Console.WriteLine("Failed to read json file:\n" + fileReadException);
+                    }
+
+                    index = JsonConvert.DeserializeObject<Counter>(json);
+                }
+
+                //generate the template
+                var fileContents = new FileContents
+                {
+                    parent = "item/generated",
+                    textures = new Dictionary<String, String>
                     {
                         ["layer0"] = "items/CI" + index.count
                     }
-            };
-            
-            //create the new json file
-            string fileName = Path.Combine(Directory.GetCurrentDirectory(),"CLI" + index.count + ".json");
-            string jsonString = JsonConvert.SerializeObject(fileContents);
-            File.WriteAllText(fileName, jsonString);
+                };
 
-            //increment counter and write to file
-            index.count += 1;
-            string jstring = JsonConvert.SerializeObject(index);
-            File.WriteAllText(filePath, jstring);
-            Console.WriteLine("Json file created at: " + fileName);
+                //create the new json file
+                string fileName = Path.Combine(Directory.GetCurrentDirectory(), "CLI" + index.count + ".json");
+                string jsonString = JsonConvert.SerializeObject(fileContents);
+                File.WriteAllText(fileName, jsonString);
+
+                //increment counter and write to file
+                index.count += 1;
+                string jstring = JsonConvert.SerializeObject(index);
+                File.WriteAllText(filePath, jstring);
+                Console.WriteLine("Json file created at: " + fileName);
+            }
         }
     }
 }
