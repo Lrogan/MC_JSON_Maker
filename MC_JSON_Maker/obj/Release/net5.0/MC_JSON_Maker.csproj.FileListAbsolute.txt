@@ -1,0 +1,17 @@
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Release\net5.0\MC_JSON_Maker.exe
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Release\net5.0\MC_JSON_Maker.deps.json
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Release\net5.0\MC_JSON_Maker.runtimeconfig.json
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Release\net5.0\MC_JSON_Maker.runtimeconfig.dev.json
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Release\net5.0\MC_JSON_Maker.dll
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Release\net5.0\ref\MC_JSON_Maker.dll
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Release\net5.0\MC_JSON_Maker.pdb
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Release\net5.0\Newtonsoft.Json.dll
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Release\net5.0\MC_JSON_Maker.GeneratedMSBuildEditorConfig.editorconfig
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Release\net5.0\MC_JSON_Maker.AssemblyInfoInputs.cache
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Release\net5.0\MC_JSON_Maker.AssemblyInfo.cs
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Release\net5.0\MC_JSON_Maker.csproj.CoreCompileInputs.cache
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Release\net5.0\MC_JSON_Maker.csproj.CopyComplete
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Release\net5.0\MC_JSON_Maker.dll
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Release\net5.0\ref\MC_JSON_Maker.dll
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Release\net5.0\MC_JSON_Maker.pdb
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Release\net5.0\MC_JSON_Maker.genruntimeconfig.cache
