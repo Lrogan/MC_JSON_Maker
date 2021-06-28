@@ -69,7 +69,7 @@ namespace MC_JSON_Maker
                 };
 
                 //create the new json file
-                string fileName = Path.Combine(Directory.GetCurrentDirectory(), "CLI" + index.count + ".json");
+                string fileName = Path.Combine(Directory.GetCurrentDirectory(), "CI" + index.count + ".json");
                 string jsonString = JsonConvert.SerializeObject(fileContents);
                 File.WriteAllText(fileName, jsonString);
 
