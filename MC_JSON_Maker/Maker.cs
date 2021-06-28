@@ -22,7 +22,8 @@ namespace MC_JSON_Maker
         {
             //initialize needed vars
             //string filePath = "./MC_JSON_Maker_RunCounter.json";
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "MC_JSON_Maker_RunCounter.json");
+            string filePathCounter = Path.Combine(Directory.GetCurrentDirectory(), "MC_JSON_Maker_RunCounter.json");
+            string filePathCI = Path.Combine(Directory.GetCurrentDirectory(), "Generated CI Files");
             Counter index = new Counter();
             index.count = 1;
             string json = "";
@@ -39,20 +40,22 @@ namespace MC_JSON_Maker
                 }
             }
 
+            Directory.CreateDirectory(filePathCI);
+
             for (int i = 0; i < input; i++)
             {
-                //check if file exists to use the updated count, otherwise use 1(line 26)
-                if (File.Exists(filePath))
+                //check if file exists to use the updated count, otherwise use 1(line 28)
+                if (File.Exists(filePathCounter))
                 {
                     try
                     {
-                        StreamReader sr = new StreamReader(filePath);
+                        StreamReader sr = new StreamReader(filePathCounter);
                         json = sr.ReadToEnd();
                         sr.Close();
                     }
                     catch (Exception fileReadException)
                     {
-                        Console.WriteLine("Failed to read json file:\n" + fileReadException);
+                        Console.WriteLine("Failed to read counter file:\n" + fileReadException);
                     }
 
                     index = JsonConvert.DeserializeObject<Counter>(json);
@@ -69,14 +72,14 @@ namespace MC_JSON_Maker
                 };
 
                 //create the new json file
-                string fileName = Path.Combine(Directory.GetCurrentDirectory(), "CI" + index.count + ".json");
+                string fileName = Path.Combine(filePathCI, "CI" + index.count + ".json");
                 string jsonString = JsonConvert.SerializeObject(fileContents);
                 File.WriteAllText(fileName, jsonString);
 
                 //increment counter and write to file
                 index.count += 1;
                 string jstring = JsonConvert.SerializeObject(index);
-                File.WriteAllText(filePath, jstring);
+                File.WriteAllText(filePathCounter, jstring);
                 Console.WriteLine("Json file created at: " + fileName);
             }
         }
