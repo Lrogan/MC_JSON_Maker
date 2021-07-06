@@ -6,7 +6,6 @@ E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Debug\net5.0\MC_JSON_Maker.dll
 E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Debug\net5.0\ref\MC_JSON_Maker.dll
 E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Debug\net5.0\MC_JSON_Maker.pdb
 E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\bin\Debug\net5.0\Newtonsoft.Json.dll
-E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Debug\net5.0\MC_JSON_Maker.csproj.AssemblyReference.cache
 E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Debug\net5.0\MC_JSON_Maker.GeneratedMSBuildEditorConfig.editorconfig
 E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Debug\net5.0\MC_JSON_Maker.AssemblyInfoInputs.cache
 E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Debug\net5.0\MC_JSON_Maker.AssemblyInfo.cs
@@ -16,3 +15,4 @@ E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Debug\net5.0\MC_JSON_Maker.dll
 E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Debug\net5.0\ref\MC_JSON_Maker.dll
 E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Debug\net5.0\MC_JSON_Maker.pdb
 E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Debug\net5.0\MC_JSON_Maker.genruntimeconfig.cache
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\obj\Debug\net5.0\MC_JSON_Maker.csproj.AssemblyReference.cache

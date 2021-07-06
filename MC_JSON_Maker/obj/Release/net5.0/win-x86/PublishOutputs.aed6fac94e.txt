@@ -1,0 +1,6 @@
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\publish\MC_JSON_Maker.pdb
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\publish\clrcompression.dll
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\publish\clrjit.dll
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\publish\coreclr.dll
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\publish\mscordaccore.dll
+E:\gitrepos\MC_JSON_Maker\MC_JSON_Maker\publish\MC_JSON_Maker.exe
