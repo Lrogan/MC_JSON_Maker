@@ -23,7 +23,7 @@ namespace MC_JSON_Maker
             //initialize needed vars
             //string filePath = "./MC_JSON_Maker_RunCounter.json";
             string counterName = "MC_JSON_Maker_RunCounter.json";
-            string generatedFileName = "Generated Files";
+            string generatedFileName = "Generated CI Files";
             Counter index = new Counter();
             index.count = 1;
             string json = "";
@@ -31,7 +31,7 @@ namespace MC_JSON_Maker
             int input = 0;
 
             string filePathCI = Path.Combine(Directory.GetCurrentDirectory(), generatedFileName);
-            string filePathCounter = Path.Combine(filePathCI, counterName);
+            string filePathCounter = Path.Combine(Directory.GetCurrentDirectory(), counterName);
             Directory.CreateDirectory(filePathCI);
 
             while (!isInt)
